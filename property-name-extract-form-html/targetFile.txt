@@ -1,0 +1,418 @@
+<div class="slpc-hide-asterisk" ng-class="{'padding-h-32': vm.$mdMedia('gt-xs'),'padding-h-16': !vm.$mdMedia('gt-xs')}"  ng-model-options="{allowInvalid: true}" activity-data-auto-save
+    readonly-form>
+    <form name="appProcessSwissLife">
+        <div class="margin-top-48" layout-gt-xs="row" layout-align="space-between center">
+            <span></span>
+            <!--<p class="font-size-fixed-16 italic_font_slpc margin-0 margin-bottom-8" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.MANDATORY_FIELD">
+            </p>-->
+        </div>
+        <div class="md-whiteframe-1dp margin-bottom-16" palette-background="swiss-life-bordeaux:50" bg-only>
+            <div class="padding-v-15 padding-h-24" palette-background="white:A700" bg-only>
+                <h2 class="italic_font_slpc margin-0 line-height-fixed-26 font-size-fixed-24" palette-background="swiss-life-grey:400" fg-only>
+                    <md-icon md-font-icon="icon-description" class="line-height-fixed-20 font-size-fixed-20"></md-icon>
+                    <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.FORM_TITLE"></span>
+                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.FORM_TITLE_LOCAL"></span>
+                </h2>
+            </div>
+
+            <div class="padding-top-24 padding-bottom-50" ng-class="{'padding-h-24': vm.$mdMedia('gt-xs'),'padding-h-8': !vm.$mdMedia('gt-xs')}">
+               
+
+                <div >
+                  
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.BEFORE_CONCLUDING_AN_INSURANCE"></span>
+                        <span class="text-bold" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.BEFORE_CONCLUDING_AN_INSURANCE_BOLD"></span>
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.BEFORE_CONCLUDING_AN_INSURANCE_2"></span>
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.BEFORE_CONCLUDING_AN_INSURANCE_LOCAL" class="slpc-workflow-dual-language"></span>
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.BEFORE_CONCLUDING_AN_INSURANCE_BOLD_LOCAL" class="slpc-workflow-dual-language"></span>
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.BEFORE_CONCLUDING_AN_INSURANCE_2_LOCAL" class="slpc-workflow-dual-language"></span>
+                    </p>
+
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.DOES_THE_CLIENT_SWISS_LIFE"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.DOES_THE_CLIENT_SWISS_LIFE_LOCAL"></span>
+                    </p>
+
+                    <md-input-container class="full-width" ng-class="{ 'md-input-invalid' : appProcessSwissLife.InsuranceSwissLife.$invalid && appProcessSwissLife.$submitted }">
+
+                        <md-radio-group class="" ng-change="vm.reset('InsuranceSwissLifeSpecify')"  ng-model="vm.formData.InsuranceSwissLife" layout-xs="column" layout="row" name="InsuranceSwissLife"
+                            ng-required="true">
+                            <md-radio-button value="No" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Yes" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES_LOCAL"></span>
+                            </md-radio-button>
+                           </md-radio-group>
+                        <div ng-messages="appProcessSwissLife.InsuranceSwissLife.$error">
+                            <div ng-message="required">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <div ng-if="vm.formData.InsuranceSwissLife === 'Yes'">
+                        <div layout="row">
+                            <div flex-xs="100" flex-sm="50" flex-md="50" flex-lg="50" flex-xl="50">
+                                <md-input-container class="full-width margin-bottom-20">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_MANY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_MANY_LOCAL"></span>
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PLEASE_SPECIFY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PLEASE_SPECIFY_LOCAL"></span>
+                                    </label>
+                                    <input required type="text" name="InsuranceSwissLifeSpecify"  ng-model="vm.formData.InsuranceSwissLifeSpecify" ng-maxlength="250">
+                                    <div ng-messages="appProcessSwissLife.InsuranceSwissLifeSpecify.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.DOES_THE_CLIENT_INSURER"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.DOES_THE_CLIENT_INSURER_LOCAL"></span>
+                    </p>
+
+                    <md-input-container class="full-width" ng-class="{ 'md-input-invalid' : appProcessSwissLife.InsuranceInsurer.$invalid && appProcessSwissLife.$submitted }">
+
+                        <md-radio-group class="" ng-change="vm.reset('InsuranceInsurerSpecify')"  ng-model="vm.formData.InsuranceInsurer" layout-xs="column" layout="row" name="InsuranceInsurer"
+                            ng-required="true">
+                            <md-radio-button value="No" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Yes" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES_LOCAL"></span>
+                            </md-radio-button>
+                           </md-radio-group>
+                        <div ng-messages="appProcessSwissLife.InsuranceInsurer.$error">
+                            <div ng-message="required">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <div ng-if="vm.formData.InsuranceInsurer === 'Yes'">
+                        <div layout="row">
+                            <div flex-xs="100" flex-sm="50" flex-md="50" flex-lg="50" flex-xl="50">
+                                <md-input-container class="full-width margin-bottom-20">
+                                    <label>
+                                        <span  ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_MANY"></span>
+                                        <span  ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_MANY_LOCAL"></span>
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PLEASE_SPECIFY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PLEASE_SPECIFY_LOCAL"></span>
+                                    </label>
+                                    <input required type="text" name="InsuranceInsurerSpecify"  ng-model="vm.formData.InsuranceInsurerSpecify" ng-maxlength="250">
+                                    <div ng-messages="appProcessSwissLife.InsuranceInsurerSpecify.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.IS_THE_CLIENT_RETIREMENT"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.IS_THE_CLIENT_RETIREMENT_LOCAL"></span>
+                    </p>
+
+                    <md-input-container class="full-width" ng-class="{ 'md-input-invalid' : appProcessSwissLife.SLProvisionGuaranteed.$invalid && appProcessSwissLife.$submitted }">
+                        <md-radio-group name="SLProvisionGuaranteed"  ng-model="vm.formData.SLProvisionGuaranteed" required>
+
+                            <div layout="row" layout-wrap>
+                                <div flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="INSUFFICIENT" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_INSUFFICIENT">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_INSUFFICIENT"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_INSUFFICIENT_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="SUFFICIENT" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SUFFICIENT">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SUFFICIENT"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SUFFICIENT_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="MORE_THAN_SUFFICIENT" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_MORE_THAN_SUFFICIENT">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_MORE_THAN_SUFFICIENT"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_MORE_THAN_SUFFICIENT_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                            </div>
+                        </md-radio-group>
+
+                        <div ng-messages="appProcessSwissLife.SLProvisionGuaranteed.$error">
+                            <div ng-message="required">
+                                <span theme-background="warn" fg-only class="font-size-fixed-12" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE"></span>
+                                <span theme-background="warn" fg-only class="font-size-fixed-12" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE_LOCAL"></span>
+                            </div>
+                        </div>
+                    </md-input-container>
+
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.WOULD_THE_CLIENT"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.WOULD_THE_CLIENT_LOCAL"></span>
+                    </p>
+
+                    <md-input-container class="full-width" ng-class="{ 'md-input-invalid' : appProcessSwissLife.SLSLReceiveadditionalBenefit.$invalid && appProcessSwissLife.$submitted }">
+
+                        <md-radio-group ng-required="true" name="SLSLReceiveadditionalBenefit"  ng-model="vm.formData.SLSLReceiveadditionalBenefit">
+                            <div layout="row" layout-wrap>
+                                <div flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="DEATH" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_DEATH">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_DEATH"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_DEATH_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="ACCIDENTAL_DEATH_COVER" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_ACCIDENTAL_DEATH_COVER">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_ACCIDENTAL_DEATH_COVER"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_ACCIDENTAL_DEATH_COVER_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="DISABILITY" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_DISABILITY">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_DISABILITY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_DISABILITY_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="25" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="NO_ADDITIONAL_BENEFITS" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_NO_ADDITIONAL_BENEFITS">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_NO_ADDITIONAL_BENEFITS"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_NO_ADDITIONAL_BENEFITS_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                            </div>
+                        </md-radio-group>
+                        <div ng-messages="appProcessSwissLife.SLSLReceiveadditionalBenefit.$error">
+                            <div ng-message="required">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            </div>
+                        </div>
+                    </md-input-container>
+
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_WOULD_THE_CLIENT"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_WOULD_THE_CLIENT_LOCAL"></span>
+                    </p>
+
+                    <md-input-container class="full-width" ng-class="{ 'md-input-invalid' : appProcessSwissLife.SLAssessProportion.$invalid && appProcessSwissLife.$submitted }">
+                        <md-radio-group name="SLAssessProportion"  ng-model="vm.formData.SLAssessProportion" required>
+
+                            <div layout="row" layout-wrap>
+                                <div flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="PRIMARY_AMOUNT" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_PRIMARY_AMOUNT">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_PRIMARY_AMOUNT"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_PRIMARY_AMOUNT_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="DISABILITY" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SIGNIFICANT_AMOUNT">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SIGNIFICANT_AMOUNT"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SIGNIFICANT_AMOUNT_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="MODERATE_AMOUNT" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_MODERATE_AMOUNT">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_MODERATE_AMOUNT"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_MODERATE_AMOUNT_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                                <div flex-xs="100" flex-sm="50" flex-md="33" flex-lg="25" flex-xl="25">
+                                    <md-radio-button value="NO_ADDITIONAL_BENEFITS" class="md-primary margin-bottom-16" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SMALL_AMOUNT">
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SMALL_AMOUNT"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.CB_SMALL_AMOUNT_LOCAL"></span>
+                                    </md-radio-button>
+                                </div>
+                            </div>
+                        </md-radio-group>
+
+                        <div ng-messages="appProcessSwissLife.SLAssessProportion.$error">
+                            <div ng-message="required">
+                                <span theme-background="warn" fg-only class="font-size-fixed-12" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE"></span>
+                                <span theme-background="warn" fg-only class="font-size-fixed-12" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE_LOCAL"></span>
+                            </div>
+                        </div>
+                    </md-input-container>
+
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.WOULD_THE_CLIENT_NEED"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.WOULD_THE_CLIENT_NEED_LOCAL"></span>
+                    </p>
+
+                    <md-input-container class="full-width" ng-class="{ 'md-input-invalid' : appProcessSwissLife.SLWithdrawalsType.$invalid && appProcessSwissLife.$submitted }">
+
+                        <md-radio-group class="" ng-change="vm.reset('SLWithdrawalsTypePerYear')"  ng-model="vm.formData.SLWithdrawalsType" layout-xs="column" layout="row" name="SLWithdrawalsType"
+                            ng-required="true">
+                            <md-radio-button value="No" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_NO_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Yes" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_YES_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Maybe" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_MAYBE">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_MAYBE"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.RADIO_MAYBE_LOCAL"></span>
+                            </md-radio-button>
+                        </md-radio-group>
+                        <div ng-messages="appProcessSwissLife.SLWithdrawalsType.$error">
+                            <div ng-message="required">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            </div>
+                        </div>
+                    </md-input-container>
+
+                    <div ng-if="vm.formData.SLWithdrawalsType === 'Yes'">
+                        <div layout="row">
+                            <div flex-xs="100" flex-sm="50" flex-md="50" flex-lg="50" flex-xl="50">
+                                <md-input-container class="full-width margin-bottom-20">
+                                    <label>
+                                        <span ng-if="vm.market==='France'" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_MANY"></span>
+                                        <span ng-if="vm.market==='France'" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.HOW_MANY_LOCAL"></span>
+                                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.LABEL_TIMES_PER_YEAR"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.LABEL_TIMES_PER_YEAR_LOCAL"></span>
+                                    </label>
+                                    <input required type="text" name="SLWithdrawalsTypePerYear"  ng-model="vm.formData.SLWithdrawalsTypePerYear" ng-maxlength="250">
+                                    <div ng-messages="appProcessSwissLife.SLWithdrawalsTypePerYear.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.THE_UNDERLYING_INVESTMENT"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.THE_UNDERLYING_INVESTMENT_LOCAL"></span>
+                    </p>
+
+                    <md-input-container class="full-width" ng-class="{ 'md-input-invalid' : appProcessSwissLife.UnderlyingInvestments.$invalid && appProcessSwissLife.$submitted }">
+
+                        <md-radio-group class=""  ng-model="vm.formData.UnderlyingInvestments" layout-xs="column" layout="row" name="UnderlyingInvestments"
+                            ng-required="true">
+                            <md-radio-button value="No" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.I_AM_NOT_INTERESTED">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.I_AM_NOT_INTERESTED"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.I_AM_NOT_INTERESTED_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Yes" class="md-primary margin-bottom-16 padding-right-35" aria-label="vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.I_AM_INTERESTED">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.I_AM_INTERESTED"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.I_AM_INTERESTED_LOCAL"></span>
+                            </md-radio-button>
+                           </md-radio-group>
+                        <div ng-messages="appProcessSwissLife.UnderlyingInvestments.$error">
+                            <div ng-message="required">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            </div>
+                        </div>
+                    </md-input-container>
+
+                    <p class="font-size-fixed-18">
+                        <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.WHAT_IS_THE_MAIN"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.WHAT_IS_THE_MAIN_LOCAL"></span>
+                    </p>
+
+                    <div layout="column">
+                        <div>
+                            <md-checkbox class="md-primary"  ng-model="vm.formData.IsSavings" aria-label="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SAVINGS">
+
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SAVINGS"
+                                    palette-background="swiss-life-grey:500" fg-only></span><span class="slpc-workflow-dual-language"
+                                    ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SAVINGS_LOCAL"
+                                    palette-background="swiss-life-grey:500" fg-only></span>
+                            </md-checkbox>
+
+                        </div>
+
+                        <div>
+                            <md-checkbox class="md-primary"  ng-model="vm.formData.IsAdditionalPension" aria-label="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.ADDITIONAL_PENSION">
+
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.ADDITIONAL_PENSION"
+                                    palette-background="swiss-life-grey:500" fg-only></span><span class="slpc-workflow-dual-language"
+                                    ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.ADDITIONAL_PENSION_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div>
+                            <md-checkbox  class="md-primary"  ng-model="vm.formData.IsSuccessionPlanning" aria-label="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SUCCESSFUL_PLANNING">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SUCCESSFUL_PLANNING"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.SUCCESSFUL_PLANNING_LOCAL"></span>
+                            </md-checkbox>
+                           
+                        </div>
+                        <div>
+                            <md-checkbox class="md-primary"  ng-model="vm.formData.IsProtectionAgainst" aria-label="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PROTECTION">
+
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PROTECTION"
+                                    palette-background="swiss-life-grey:500" fg-only></span><span class="slpc-workflow-dual-language"
+                                    ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PROTECTION_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div>
+                            <md-checkbox ng-click="vm.clearDataOnChange()" class="md-primary"  ng-model="vm.formData.IsOther" aria-label="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.OTHER">
+                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.OTHER"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.OTHER_LOCAL"></span>
+                            </md-checkbox>
+                           
+                        </div>
+
+                        <div ng-if="vm.formData.IsOther === true">
+                            <div layout="row">
+                                <div flex-xs="100" flex-sm="50" flex-md="50" flex-lg="50" flex-xl="50">
+                                    <md-input-container class="full-width margin-bottom-20">
+                                        <label>
+                                            <span  ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PLEASE_SPECIFY"></span>
+                                            <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.PLEASE_SPECIFY_LOCAL"></span>
+                                        </label>
+                                        <input required type="text" name="WhatIsMainOther"  ng-model="vm.formData.WhatIsMainOther" ng-maxlength="250">
+                                        <div ng-messages="appProcessSwissLife.WhatIsMainOther.$error">
+                                            <div ng-message="maxlength">
+                                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.TEXT_LENGTH_VALIDATION_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            </div>
+                                            <div ng-message="required">
+                                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                                <span ng-bind="::vm.localizationObj.NEW.APP_PROCESS_SWISS_LIFE_V2.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

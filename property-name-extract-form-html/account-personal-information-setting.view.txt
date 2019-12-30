@@ -1,0 +1,342 @@
+<div>
+    <h2>{{'TENANT.USERS_PROFILE.PERSONAL_INFORMATION' | translate}}</h2>
+    <md-card class="margin-h-0">
+        <md-list class="padding-0">
+
+            <!--displayName-->
+            <!--md-list-item class="secondary-button-padding" ng-if="vm.config.properties.DisplayName.isVisible && !vm.editDisplayName">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 full-width padding-right-16">{{'PERSON.DISPLAYNAME' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{vm.personalInformationUserForm.DisplayName}}</p>
+                    </div>
+                </div>
+                <div class="md-secondary square-40" ng-if="!vm.config.properties.DisplayName.isEdit"></div>
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         ng-if="vm.config.properties.DisplayName.isEdit"
+                         aria-label="{{'PERSON.EDIT' | translate}}"
+                         ng-click="vm.editDisplayName=!vm.editDisplayName;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+            <md-list-item ng-if="vm.editDisplayName">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'PERSON.DISPLAYNAME' | translate}}</label>
+                    <form name="editDisplayName" flex>
+                        <md-input-container class="md-block">
+                            <label>{{'PERSON.DISPLAYNAME' | translate}}</label>
+                            <input required type="text" name="displayName" ng-model="vm.personalInformationUserForm.DisplayName" maxlength="100" md-maxlength="100">
+                            <div ng-messages="editDisplayName.displayName.$error">
+                                <div ng-message when="required">
+                                    <span ng-if="editDisplayName.displayName.$touched">{{'PERSON.ENTER_DISPLAYNAME' | translate}}</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'PERSON.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdateUserPerson('DisplayName')">{{'PERSON.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'PERSON.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editDisplayName.$invalid" ng-click="vm.updateUserPerson('DisplayName')">{{'PERSON.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item-->
+            <!--Salutation-->
+            <md-list-item class="secondary-button-padding" ng-if="!vm.editSalutation">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.SALUTATION' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{ 'TENANT.'+ vm.personalInformationUserForm.Salutation.toUpperCase() | translate }}</p>
+                    </div>
+                </div>
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         aria-label="{{'PERSON.EDIT' | translate}}"
+                         ng-click="vm.editSalutation=!vm.editSalutation;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+            <md-list-item ng-if="vm.editSalutation">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.SALUTATION' | translate}}</label>
+                    <form name="editSalutation" flex>
+                        <md-input-container class="md-block margin-top-0" flex-gt-sm>
+                            <md-select ng-model="vm.personalInformationUserForm.Salutation" placeholder="{{'TENANT.USERS_PROFILE.SALUTATION' | translate}}">
+                                <md-option ng-value="salutation" ng-repeat="salutation in vm.salutationList">{{'TENANT.'+ salutation.toUpperCase() | translate}}</md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <!--<md-input-container class="md-block">
+                            <label>{{'PERSON.SALUTATION' | translate}}</label>
+                            <input required type="text" name="salutation" ng-model="vm.personalInformationUserForm.Salutation" ng-maxlength="100">
+                            <div ng-messages="editSalutation.salutation.$error">
+                                <div ng-message when="required">
+                                    <span ng-if="editSalutation.salutation.$touched">{{'PERSON.ENTER_SALUTATION' | translate}}</span>
+                                </div>
+                            </div>
+                        </md-input-container>-->
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdatePerson('Salutation')">{{'TENANT.USERS_PROFILE.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editSalutation.$invalid" ng-click="vm.updateUserPerson('Salutation')">{{'TENANT.USERS_PROFILE.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <!--FirstName-->
+            <md-list-item class="secondary-button-padding" ng-if="!vm.editFirstName">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.FIRSTNAME' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{vm.personalInformationUserForm.FirstName}}</p>
+                    </div>
+                </div>
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         aria-label="{{'TENANT.USERS_PROFILE.EDIT' | translate}}"
+                         ng-click="vm.editFirstName=!vm.editFirstName;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+            <md-list-item ng-if="vm.editFirstName">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.FIRSTNAME' | translate}}</label>
+                    <form name="editFirstName" flex>
+                        <md-input-container class="md-block">
+                            <label>{{'TENANT.USERS_PROFILE.FIRSTNAME' | translate}}</label>
+                            <input required type="text" name="FirstName" ng-model="vm.personalInformationUserForm.FirstName" maxlength="50" md-maxlength="50">
+                            <div ng-messages="editFirstName.FirstName.$error">
+                                <div ng-message when="required">
+                                    <span ng-if="editFirstName.FirstName.$touched">{{'TENANT.USERS_PROFILE.ENTER_FIRSTNAME' | translate}}</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdatePerson('FirstName')">{{'TENANT.USERS_PROFILE.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editFirstName.$invalid" ng-click="vm.updateUserPerson('FirstName')">{{'TENANT.USERS_PROFILE.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+            <!--LastName-->
+            <md-list-item class="secondary-button-padding" ng-if="!vm.editLastName">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.LASTNAME' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{vm.personalInformationUserForm.LastName}}</p>
+                    </div>
+                </div>
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         aria-label="{{'TENANT.USERS_PROFILE.EDIT' | translate}}"
+                         ng-click="vm.editLastName=!vm.editLastName;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+            <md-list-item ng-if="vm.editLastName">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.LASTNAME' | translate}}</label>
+                    <form name="editLastName" flex>
+                        <md-input-container class="md-block">
+                            <label>{{'TENANT.USERS_PROFILE.LASTNAME' | translate}}</label>
+                            <input required type="text" name="LastName" ng-model="vm.personalInformationUserForm.LastName" maxlength="50" md-maxlength="50">
+                            <div ng-messages="editLastName.LastName.$error">
+                                <div ng-message when="required">
+                                    <span ng-if="editLastName.LastName.$touched">{{'TENANT.USERS_PROFILE.ENTER_LASTNAME' | translate}}</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdatePerson('LastName')">{{'TENANT.USERS_PROFILE.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editLastName.$invalid" ng-click="vm.updateUserPerson('LastName')">{{'TENANT.USERS_PROFILE.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <!--PhoneNumber-->
+
+            <md-list-item class="secondary-button-padding" ng-if="!vm.editMobileCountryCode">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.COUNTRY_CODE_MOBILE' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{vm.personalInformationUserForm.mobileCountryLabel.country}} ({{vm.personalInformationUserForm.mobileCountryLabel.dialcode}})</p>
+                    </div>
+                </div>
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         aria-label="{{'TENANT.USERS_PROFILE.EDIT' | translate}}"
+                         ng-click="vm.editMobileCountryCode=!vm.editMobileCountryCode;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+    
+            <md-list-item ng-if="vm.editMobileCountryCode">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.COUNTRY_CODE_MOBILE' | translate}}</label>
+                    <form name="editMobileCountryCode" flex>
+                        <md-input-container class="md-block">
+                            <label for="mobilecountrycode " translate="TENANT.USERS_PROFILE.COUNTRY_CODE_MOBILE"></label>
+                            <md-select id="mobilecountrycode" aria-label="{{'TENANT.USERS_PROFILE.COUNTRY_CODE_MOBILE' | translate}}" ng-model="vm.personalInformationUserForm.MobileCountryCode" ng-change="vm.updateMobileCountryCode()">
+                                <md-option ng-value="key " ng-repeat="(key, value) in vm.countries">{{value.country}} ({{value.dialcode}})</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdatePerson('MobileCountryCode')">{{'TENANT.USERS_PROFILE.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editMobileCountryCode.$invalid" ng-click="vm.updateUserPerson('MobileCountryCode')">{{'TENANT.USERS_PROFILE.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <md-list-item class="secondary-button-padding" ng-if="!vm.editMobilePhoneNumber">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.PHONE' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{ vm.mobileDialcode + vm.personalInformationUserForm.MobilePhoneNumber}}</p>
+                    </div>
+                </div>
+                <!-- <div class="md-secondary square-40"></div> -->
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         aria-label="{{'TENANT.USERS_PROFILE.EDIT' | translate}}"
+                         ng-click="vm.editMobilePhoneNumber=!vm.editMobilePhoneNumber;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <md-list-item ng-if="vm.editMobilePhoneNumber">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.PHONE' | translate}}</label>
+                    <form name="editMobilePhoneNumber" flex>
+                        <div layout="row">
+                            <span class="width-50 height-39 line-height-fixed-60 border-bottom padding-5 margin-right-10 opacity-60">
+                                {{vm.mobileDialcode}}
+                            </span>
+                            <md-input-container class="md-block">
+                                <label>{{'TENANT.USERS_PROFILE.PHONE' | translate}}</label>
+                                <input type="text" name="MobilePhoneNumber" ng-model="vm.personalInformationUserForm.MobilePhoneNumber" maxlength="15" md-maxlength="15">
+                                <!-- <div ng-messages="editMobilePhoneNumber.MobilePhoneNumber.$error">
+                                    <div ng-message when="required">
+                                        <span ng-if="editMobilePhoneNumber.MobilePhoneNumber.$touched">{{'TENANT.USERS_PROFILE.ENTER_PHONE' | translate}}</span>
+                                    </div>
+                                </div> -->
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdatePerson('MobilePhoneNumber')">{{'TENANT.USERS_PROFILE.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editMobilePhoneNumber.$invalid" ng-click="vm.updateUserPerson('MobilePhoneNumber')">{{'TENANT.USERS_PROFILE.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <md-list-item class="secondary-button-padding" ng-if="!vm.editOfficeCountryCode">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.COUNTRY_CODE_OFFICIAL' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{vm.personalInformationUserForm.countryLabel.country}} ({{vm.personalInformationUserForm.countryLabel.dialcode}})</p>
+                    </div>
+                </div>
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         aria-label="{{'TENANT.USERS_PROFILE.EDIT' | translate}}"
+                         ng-click="vm.editOfficeCountryCode=!vm.editOfficeCountryCode;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <md-list-item ng-if="vm.editOfficeCountryCode">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.COUNTRY_CODE_OFFICIAL' | translate}}</label>
+                    <form name="editOfficeCountryCode" flex>
+                        <md-input-container class="md-block">
+                            <label for="officecountrycode " translate="TENANT.USERS_PROFILE.COUNTRY_CODE_OFFICIAL"></label>
+                            <md-select id="officecountrycode" aria-label="{{'TENANT.USERS_PROFILE.COUNTRY_CODE_OFFICIAL' | translate}}" ng-model="vm.personalInformationUserForm.OfficeCountryCode" ng-change="vm.updateOfficeCountryCode()">
+                                <md-option ng-value="key " ng-repeat="(key, value) in vm.countries">{{value.country}} ({{value.dialcode}})</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdatePerson('OfficeCountryCode')">{{'TENANT.USERS_PROFILE.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editOfficeCountryCode.$invalid" ng-click="vm.updateUserPerson('OfficeCountryCode')">{{'TENANT.USERS_PROFILE.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <md-list-item class="secondary-button-padding" ng-if="!vm.editOfficialPhoneNumber">
+                <div layout="row" layout-xs="column" layout-align-xs="center start" layout-align="start center" class="full-width margin-v-8 overflow-hidden">
+                    <div flex-gt-sm="25" flex-sm="30">
+                        <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.PHONE_NUMBER_OFFICIAL' | translate}}</label>
+                    </div>
+                    <div flex-xs="initial" flex class="overflow-hidden">
+                        <p class="margin-0 text-ellipsis">{{vm.officeDialcode}}{{vm.personalInformationUserForm.OfficialPhoneNumber}}</p>
+                    </div>
+                </div>
+                <md-icon class="md-secondary md-hue-3" md-font-icon="icon-mode-edit"
+                         aria-label="{{'TENANT.USERS_PROFILE.EDIT' | translate}}"
+                         ng-click="vm.editOfficialPhoneNumber=!vm.editOfficialPhoneNumber;"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+
+            <md-list-item ng-if="vm.editOfficialPhoneNumber">
+                <div layout-gt-sm="row" layout-align-gt-sm="start start" class="padding-16 md-list-item-text full-width">
+                    <label class="md-caption font-weight-600 padding-right-16" flex-gt-sm="25" flex-sm="30">{{'TENANT.USERS_PROFILE.PHONE_NUMBER_OFFICIAL' | translate}}</label>
+                    <form name="editOfficialPhoneNumber" flex>
+                        <div layout="row">
+                            <span class="width-50 height-39 line-height-fixed-60 border-bottom padding-5 margin-right-10 opacity-60">
+                                {{vm.officeDialcode}}
+                            </span>
+                            <md-input-container md-no-float class="md-block full-width margin-bottom-30">
+                                <input id="officephone"  aria-label="{{'TENANT.USERS_PROFILE.PHONE_NUMBER_OFFICIAL' | translate}}" name="officephone" type="text" ng-model="vm.personalInformationUserForm.OfficialPhoneNumber" placeholder="{{'TENANT.USERS_PROFILE.PHONE_NUMBER_OFFICIAL' | translate}}" ng-pattern="vm.pattern.phone" ng-change="vm.command.updateOfficeCountryCode()" />
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <span flex></span>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.CANCEL' | translate}}" class="text-defaultcase" ng-click="vm.cancelUpdatePerson('OfficialPhoneNumber')">{{'TENANT.USERS_PROFILE.CANCEL' | translate}}</md-button>
+                            <md-button aria-label="{{'TENANT.USERS_PROFILE.UPDATE' | translate}}"
+                                       class="md-primary text-defaultcase"
+                                       type="submit"
+                                       ng-disabled="editOfficialPhoneNumber.$invalid" ng-click="vm.updateUserPerson('OfficialPhoneNumber')">{{'TENANT.USERS_PROFILE.UPDATE' | translate}}</md-button>
+                        </div>
+                    </form>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-card>
+</div>

@@ -1,0 +1,1242 @@
+<div class="slpc-hide-asterisk" ng-class="{'padding-h-32': vm.$mdMedia('gt-xs'),'padding-h-16': !vm.$mdMedia('gt-xs')}"
+    activity-data-auto-save readonly-form>
+    <form name="selfManageAdvisoryStrategy">
+        <div class="margin-top-48" layout-gt-xs="row" layout-align="space-between center">
+        </div>
+
+        <div class="md-whiteframe-1dp margin-bottom-16" palette-background="swiss-life-bordeaux:50" bg-only>
+            <div class="padding-v-15 padding-h-24" palette-background="white:A700" bg-only>
+                <h2 class="margin-0 line-height-fixed-26 font-size-fixed-20" palette-background="swiss-life-grey:500"
+                    fg-only>
+                    <md-icon md-font-icon="icon-description" class="line-height-fixed-20 font-size-fixed-20"></md-icon>
+                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FROM_TITLE"></span>
+                    <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FROM_TITLE_LOCAL"></span>
+                </h2>
+            </div>
+
+            <div class="padding-top-24 padding-bottom-50" ng-class="{'padding-h-24': vm.$mdMedia('gt-xs'),'padding-h-8': !vm.$mdMedia('gt-xs')}">
+
+                <div>
+                    <md-radio-group layout-gt-xs="column" ng-model="vm.formData.SMAStrategySameInvestment" name="SMAStrategySameInvestment" ng-required="true">
+                        <md-radio-button ng-if="vm.market=='Finland'" flex value="SameInvestment" class="md-primary margin-bottom-8" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SAME_INVESTMENT_STRATEGY"
+                            palette-background="swiss-life-black:900" fg-only>
+                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SAME_INVESTMENT_STRATEGY"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SAME_INVESTMENT_STRATEGY_LOCAL"></span>
+                        </md-radio-button>
+                        <md-radio-button value="DifferentInvestment" class="md-primary margin-bottom-8" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.DIFFERENT_INVESTMENT"
+                            palette-background="swiss-life-black:900" fg-only>
+                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.DIFFERENT_INVESTMENT"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.DIFFERENT_INVESTMENT_LOCAL"></span>
+                        </md-radio-button>
+                    </md-radio-group>
+                    <div ng-messages="selfManageAdvisoryStrategy.SMAStrategySameInvestment.$error">
+                        <div ng-message="required">
+                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Different investment strategy (please define below) -->
+                <div ng-if="vm.formData.SMAStrategySameInvestment === 'DifferentInvestment'">
+                    <div>
+                        <P>                
+                            <span class="text-bold" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.TITLE_INVESTMENT_STRATEGY"></span>
+                            <span class="text-bold slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.TITLE_INVESTMENT_STRATEGY_LOCAL"></span>
+                        </P>
+                        <md-radio-group layout-gt-xs="row" ng-model="vm.formData.SMAInvestmentStrategy" name="SMAInvestmentStrategy" ng-required="true">
+                            <md-radio-button value="Conservative" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_CONSERVATIVE"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_CONSERVATIVE"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_CONSERVATIVE_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Balanced" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_BALANCED"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_BALANCED"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_BALANCED_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Growth" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_GROWTH"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_GROWTH"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_GROWTH_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="Aggressive" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_AGGRESSIVE"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_AGGRESSIVE"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_AGGRESSIVE_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="RADIO_DEFINED" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_DEFINED"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_DEFINED"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.RADIO_DEFINED_LOCAL"></span>
+                            </md-radio-button>
+                            <!-- <md-icon md-font-icon="icon-info" ng-click="vm.showInfoModal()" palette-background="swiss-life-ochre:500"
+                            fg-only class="line-height-fixed-20 font-size-fixed-24 cur-pointer"></md-icon> -->
+                        </md-radio-group>
+                        <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategy.$error">
+                            <div ng-message="required">
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="margin-top-36">
+                        <P>                
+                            <span class="text-bold" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.STRATEGY_RISK"></span>
+                            <span class="text-bold slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.STRATEGY_RISK_LOCAL"></span>
+                        </P>
+                        <md-radio-group layout-gt-xs="row" ng-model="vm.formData.SMAInvestmentStrategyRisk" name="SMAInvestmentStrategyRisk" ng-required="true">
+                            <md-radio-button value="LOW" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.LOW"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.LOW"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.LOW_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="MEDIUM" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MEDIUM"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MEDIUM"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MEDIUM_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="HIGH" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.HIGH"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.HIGH"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.HIGH_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="VERY_HIGH" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.VERY_HIGH"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.VERY_HIGH"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.VERY_HIGH_LOCAL"></span>
+                            </md-radio-button>
+                            <md-radio-button value="DEFINED" class="md-primary margin-bottom-8 padding-right-24" aria-label="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.DEFINED"
+                                palette-background="swiss-life-black:900" fg-only>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.DEFINED"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.DEFINED_LOCAL"></span>
+                            
+                            </md-radio-button>
+                        </md-radio-group>
+                        <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyRisk.$error">
+                            <div ng-message="required">
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECT_ONE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECT_ONE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    
+                    <P class="padding-top-20 margin-bottom-0">                
+                        <span class="text-bold" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.IT_IS_MANDATORY"></span>
+                        <span class="text-bold slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.IT_IS_MANDATORY_LOCAL"></span>
+                    </P>          
+                    
+
+                    <P class="padding-top-20 margin-bottom-0">                
+                        <span class="text-bold slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.ASSET_CATEGORIES"></span>
+                        <span class="text-bold" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.ASSET_CATEGORIES_LOCAL"></span>
+                    </P>
+
+                
+                    <!-- Bonds/Obligaatiot -->
+                    <div class="margin-top-36 margin-bottom-0">
+                        <h4 class="text-bold font-size-fixed-18">
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FIXED_INCOME_ONE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FIXED_INCOME_TWO"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FIXED_INCOME_THREE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FIXED_INCOME_FOUR"></span>
+                        </h4>
+
+
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAInvestmentStrategyBonds" name="SMAInvestmentStrategyBonds" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.IDENTITY_CARD_NO}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.BONDS"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.BONDS_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+
+                        <div ng-if="vm.formData.SMAInvestmentStrategyBonds" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyBondsMinimum" ng-model="vm.formData.SMAInvestmentStrategyBondsMinimum"
+                                    min="0" max="{{vm.maxBond}}" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyBonds" ng-change="vm.checkMinMax('Bond')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyBondsMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxEquities}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>                                
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div> 
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-16 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyBondsMaximum" ng-model="vm.formData.SMAInvestmentStrategyBondsMaximum"
+                                    min="{{vm.minBond}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyBonds"
+                                    ng-change="vm.checkMinMax('Bond')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyBondsMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <!-- <div ng-message="min">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div> -->
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minBond}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>                                 
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div>
+                    </div> <!-- End Bonds/Obligaatiot -->
+
+
+                    <!-- Equities/Osakkeet -->
+                    <div class="margin-top-36 margin-bottom-0">
+                        <h4 class="text-bold font-size-fixed-18">
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITIES_ONE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITIES_TWO"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITIES_THREE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITIES_FOUR"></span>
+                        </h4>
+
+
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAInvestmentStrategyEquities" name="SMAInvestmentStrategyEquities" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.IDENTITY_CARD_NO}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITIES"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITIES_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+
+                        <div ng-if="vm.formData.SMAInvestmentStrategyEquities" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyEquitiesMinimum" ng-model="vm.formData.SMAInvestmentStrategyEquitiesMinimum"
+                                    min="0" max="{{vm.maxEquities}}" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyEquities"
+                                    ng-change="vm.checkMinMax('Equities')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyEquitiesMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxEquities}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyEquitiesMaximum" ng-model="vm.formData.SMAInvestmentStrategyEquitiesMaximum"
+                                    min="{{vm.minEquities}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyEquities"
+                                    ng-change="vm.checkMinMax('Equities')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyEquitiesMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+
+                                        
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minEquities}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div>
+                    </div> <!-- End Equities/Osakkeet -->
+
+
+                    <!-- Investment funds/Sijoitusrahastot -->
+                    <div class="margin-top-36 margin-bottom-0">
+                        <h4 class="text-bold font-size-fixed-18">
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.INVESTMENT_FUNDS_ONE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.INVESTMENT_FUNDS_TWO"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.INVESTMENT_FUNDS_THREE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.INVESTMENT_FUNDS_FOUR"></span>
+                        </h4>
+
+
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAInvestmentStrategyBondsFunds" name="SMAInvestmentStrategyBondsFunds" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.BOND_FUNDS}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.BOND_FUNDS"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.BOND_FUNDS_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMAInvestmentStrategyBondsFunds" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyBondsFundsMinimum" ng-model="vm.formData.SMAInvestmentStrategyBondsFundsMinimum" 
+                                    min="0" max="{{vm.maxBondsFund}}" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyBondsFunds"
+                                    ng-change="vm.checkMinMax('BondsFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyBondsFundsMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxBondsFund}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyBondsFundsMaximum" ng-model="vm.formData.SMAInvestmentStrategyBondsFundsMaximum"
+                                    min="{{vm.minBondsFund}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyBondsFunds"
+                                    ng-change="vm.checkMinMax('BondsFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyBondsFundsMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>                                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minBondsFund}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div> <!-- Bonds funds -->
+
+
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAInvestmentStrategyEquityFunds" name="SMAInvestmentStrategyEquityFunds" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.EQUITY_FUNDS}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITY_FUNDS"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EQUITY_FUNDS_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMAInvestmentStrategyEquityFunds" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyEquityFundsMinimum" ng-model="vm.formData.SMAInvestmentStrategyEquityFundsMinimum" 
+                                    min="0" max="{{vm.maxEquityFund}}" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyEquityFunds"
+                                    ng-change="vm.checkMinMax('EquityFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyEquityFundsMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxEquityFund}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>                        
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyEquityFundsMaximum" ng-model="vm.formData.SMAInvestmentStrategyEquityFundsMaximum"
+                                    min="{{vm.minEquityFund}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyEquityFunds"
+                                    ng-change="vm.checkMinMax('EquityFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyEquityFundsMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <!-- <div ng-message="min">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div> -->
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minEquityFund}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div> <!-- End Equity funds -->              
+
+
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAInvestmentStrategyMoneyFunds" name="SMAInvestmentStrategyMoneyFunds" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.MONEY_MARKET}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MONEY_MARKET"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MONEY_MARKET_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMAInvestmentStrategyMoneyFunds" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyMoneyFundsMinimum" ng-model="vm.formData.SMAInvestmentStrategyMoneyFundsMinimum"
+                                    min="0" max="{{vm.maxMoneyMarketFund}}" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyMoneyFunds"
+                                    ng-change="vm.checkMinMax('MoneyMarketFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyMoneyFundsMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <!-- <div ng-message="min">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div> -->
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxMoneyMarketFund}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>                        
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+            
+                                    <input type="number" name="SMAInvestmentStrategyMoneyFundsMaximum" ng-model="vm.formData.SMAInvestmentStrategyMoneyFundsMaximum"
+                                    min="{{vm.minMoneyMarketFund}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAInvestmentStrategyMoneyFunds"
+                                    ng-change="vm.checkMinMax('MoneyMarketFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAInvestmentStrategyMoneyFundsMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minMoneyMarketFund}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div> <!-- End Money market funds -->
+                        
+                    </div> 
+                    <!-- End Investment funds/Sijoitusrahastot -->
+
+
+                    <!-- Alternative funds/Vaihtoehtoiset -->
+                    <div class="margin-top-36 margin-bottom-0">
+                        <h4 class="text-bold font-size-fixed-18">
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.ALTERNATIVE_FUNDS_ONE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.ALTERNATIVE_FUNDS_TWO"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.ALTERNATIVE_FUNDS_THREE"></span>
+                            <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.ALTERNATIVE_FUNDS_FOUR"></span>
+                        </h4>
+                    
+                    
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAAlternativeHedgeFunds" name="SMAAlternativeHedgeFunds" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.HEDGE_FUNDS}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.HEDGE_FUNDS"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.HEDGE_FUNDS_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMAAlternativeHedgeFunds" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+                    
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativeHedgeFundsMinimum" ng-model="vm.formData.SMAAlternativeHedgeFundsMinimum" 
+                                    min="0" max="{{vm.maxHedgeFund}}" ng-maxlength="15" ng-required="vm.formData.SMAAlternativeHedgeFunds"
+                                    ng-change="vm.checkMinMax('HedgeFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativeHedgeFundsMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxHedgeFund}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+                    
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>
+                    
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativeHedgeFundsMaximum" ng-model="vm.formData.SMAAlternativeHedgeFundsMaximum"
+                                    min="{{vm.minHedgeFund}}" max="100" ng-maxlength="15" ng-required="vm.formData.IsAlternativeHedgeFunds"
+                                    ng-change="vm.checkMinMax('HedgeFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativeHedgeFundsMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minHedgeFund}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div> <!-- End HedgeFunds -->
+                    
+                    
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAAlternativeCommodityFunds" name="SMAAlternativeCommodityFunds" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.COMMODITY_FUNDS}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.COMMODITY_FUNDS"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.COMMODITY_FUNDS_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMAAlternativeCommodityFunds" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+                    
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativeCommodityFundsMinimum" ng-model="vm.formData.SMAAlternativeCommodityFundsMinimum" 
+                                    min="0" max="{{vm.maxHedgeFund}}" ng-maxlength="15" ng-required="vm.formData.SMAAlternativeCommodityFunds"
+                                    ng-change="vm.checkMinMax('HedgeFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativeCommodityFundsMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxHedgeFund}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>                        
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativeCommodityFundsMaximum" ng-model="vm.formData.SMAAlternativeCommodityFundsMaximum"
+                                    min="{{vm.minHedgeFund}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAAlternativeCommodityFunds"
+                                    ng-change="vm.checkMinMax('HedgeFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativeCommodityFundsMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <!-- <div ng-message="min">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div> -->
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minHedgeFund}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div> <!-- End Commodity funds -->              
+                    
+                    
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAAlternativePrivateFunds" name="SMAAlternativePrivateFunds" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.PRIVATE_EQUITY}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PRIVATE_EQUITY"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PRIVATE_EQUITY_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMAAlternativePrivateFunds" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+                    
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativePrivateFundsMinimum" ng-model="vm.formData.SMAAlternativePrivateFundsMinimum"
+                                    min="0" max="{{vm.maxPrivateEquityFund}}" ng-maxlength="15" ng-required="vm.formData.SMAAlternativePrivateFunds"
+                                    ng-change="vm.checkMinMax('PrivateEquityFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativePrivateFundsMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxPrivateEquityFund}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>                        
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativePrivateFundsMaximum" ng-model="vm.formData.SMAAlternativePrivateFundsMaximum"
+                                    min="{{vm.minPrivateEquityFund}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAAlternativePrivateFunds"
+                                    ng-change="vm.checkMinMax('PrivateEquityFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativePrivateFundsMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minPrivateEquityFund}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div> <!-- End Private equity funds -->
+                                    
+                    
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMAAlternativeRealEstate" name="SMAAlternativeRealEstate" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.REAL_ESTATE}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REAL_ESTATE"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REAL_ESTATE_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMAAlternativeRealEstate" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+                    
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativeRealEstateMinimum" ng-model="vm.formData.SMAAlternativeRealEstateMinimum"
+                                    min="0" max="{{vm.maxRealStateFund}}" ng-maxlength="15" ng-required="vm.formData.SMAAlternativeRealEstate"
+                                    ng-change="vm.checkMinMax('RealStateFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativeRealEstateMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxRealStateFund}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>                        
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                    
+                                    <input type="number" name="SMAAlternativeRealEstateMaximum" ng-model="vm.formData.SMAAlternativeRealEstateMaximum"
+                                    min="{{vm.minRealStateFund}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMAAlternativeRealEstate"
+                                    ng-change="vm.checkMinMax('RealStateFund')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAAlternativeRealEstateMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minRealStateFund}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div> <!-- End Real estate and infrastructure funds/Kiinteistö- -->                                   
+                    </div> <!-- End Alternative funds/Vaihtoehtoiset -->
+
+
+                    <!--Other assets-->
+                    <h4 class="text-bold font-size-fixed-18 margin-top-16">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.OTHER_ASSETS"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.OTHER_ASSETS_LOCAL"></span>
+                    </h4>                
+
+
+                    <div flex>
+                        <md-checkbox class="md-primary margin-bottom-0" ng-model="vm.formData.SMAFutures" name="SMAFutures">
+                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FUTURES_ONE"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FUTURES_TWO"></span>
+                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FUTURES_THREE"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FUTURES_FOUR"></span>
+                        </md-checkbox>
+                    </div>
+
+
+                    <!-- Current Deposit -->
+                    <div class="margin-top-36 margin-bottom-0">
+
+                        <!--Cash-->
+                        <h4 class="text-bold font-size-fixed-18 margin-top-16">
+                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.CASH"></span>
+                            <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.CASH_LOCAL"></span>
+                        </h4>
+
+                        
+                        <div class="padding-top-0">
+                            <md-checkbox ng-model="vm.formData.SMACurrentDeposit" name="SMACurrentDeposit" aria-label="{{::vm.localizationObj.NEW.SG_LAP_BENEFICIAL_OWNER_CONTRACT.COMMODITY_FUNDS}}"
+                                class="md-warn ">
+                                <span ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.CURRENT"></span>
+                                <span class="slpc-workflow-dual-language" ng-bind="vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.CURRENT_LOCAL"></span>
+                            </md-checkbox>
+                        </div>
+                        <div ng-if="vm.formData.SMACurrentDeposit" layout="row" layout-xs="column" layout-sm="column" class="layout-xs-column layout-sm-column layout-row">
+
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MINIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+
+                                    <input type="number" name="SMACurrentDepositMinimum" ng-model="vm.formData.SMACurrentDepositMinimum" 
+                                    min="0" max="{{vm.maxCash}}" ng-maxlength="15" ng-required="vm.formData.SMACurrentDeposit" ng-change="vm.checkMinMax('Cash')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMACurrentDepositMinimum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MINIMUM_VALUE}} {{vm.maxCash}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Minimum -->
+                            <div flex="10" ng-class="{'margin-bottom-30': vm.$mdMedia('xs')}" class="text-center" layout="row" layout-align="center start">
+                                <p class="font-size-fixed-18 margin-top-10">
+                                    <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO"></span>
+                                    <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.TO_LOCAL"></span>
+                                </p>
+                            </div>                        
+                            <div flex="50" flex-xs="100" flex-sm="100" class="margin-right-0 flex-xs-100 flex-sm-100 flex-50">
+                                <md-input-container class="full-width margin-top-10 margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAXIMUM_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+
+                                    <input type="number" name="SMACurrentDepositMaximum" ng-model="vm.formData.SMACurrentDepositMaximum"
+                                    min="{{vm.minCash}}" max="100" ng-maxlength="15" ng-required="vm.formData.SMACurrentDeposit" ng-change="vm.checkMinMax('Cash')"><md-icon>&percnt;</md-icon>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMACurrentDepositMaximum.$error">
+                                        <div ng-message="maxlength">
+                                            <span ng-bind="::vm.localizationObj.COMMON_LOCALIZATION_DATA.NUMBER_LENGTH_VALIDATION" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    
+                                        <div ng-message="min">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.APP_PROCESS_CHARGES.MAXIMUM_VALUE}} {{vm.minCash}}</span>
+                                        </div>
+                                        <div ng-message="max">
+                                            <span theme-background="warn" fg-only class="font-size-fixed-12">{{vm.localizationObj.COMMON_LOCALIZATION_DATA.PERCENTAGE_VALIDATION}}</span>
+                                        </div>
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div> <!-- End Maximum -->
+                        </div>             
+                    </div> <!-- End Current Deposit -->
+                </div> <!-- End Different investment strategy -->
+
+
+                <P class="padding-top-20 margin-bottom-0">                
+                    <span class="text-bold" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.POLICYHOLDER_REQUESTS"></span>
+                    <span class="text-bold slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.POLICYHOLDER_REQUESTS_LOCAL"></span>
+                </P>
+
+                
+                <div class="margin-top-20">
+                    <md-checkbox class="md-primary display-block margin-bottom-0" ng-model="vm.formData.SMAMail" name="SMAMail">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAIL_TO"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.MAIL_TO_LOCAL"></span>
+                    </md-checkbox>
+                </div>
+
+                <div class="margin-left-20 margin-top-16" ng-if="vm.formData.SMAMail">
+                    <md-checkbox class="md-primary display-block margin-bottom-16" ng-model="vm.formData.SMAFirstPolicyholder" name="SMAFirstPolicyholder">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FIRST_POLICYHOLDER"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FIRST_POLICYHOLDER_LOCAL"></span>
+                    </md-checkbox>
+                    <md-checkbox ng-if="vm.secondPolicyholder === 'AddAnotherPolicyholderYES'" class="md-primary display-block margin-bottom-16" ng-model="vm.formData.SMASecondPolicyholder" name="SMASecondPolicyholder">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SECOND_POLICYHOLDER"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SECOND_POLICYHOLDER_LOCAL"></span>
+                    </md-checkbox>
+                    <md-checkbox ng-if="vm.secondPolicyholder === 'AddAnotherPolicyholderYES && vm.thirdPolicyholder === 'AddAnotherPolicyholderYES2nd'" class="md-primary display-block margin-bottom-16" ng-model="vm.formData.SMAThirdPolicyholder" name="SMAThirdPolicyholder">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.THIRD_POLICYHOLDER"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.THIRD_POLICYHOLDER_LOCAL"></span>
+                    </md-checkbox>
+                    <md-checkbox ng-if="vm.secondPolicyholder === 'AddAnotherPolicyholderYES && vm.thirdPolicyholder === 'AddAnotherPolicyholderYES2nd' && vm.fourthPolicyholder === 'AddAnotherPolicyholderYES3rd'" class="md-primary display-block margin-bottom-16" ng-model="vm.formData.SMAFourthPolicyholder" name="SMAFourthPolicyholder">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FOURTH_POLICYHOLDER"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FOURTH_POLICYHOLDER_LOCAL"></span>
+                    </md-checkbox>
+                    <md-checkbox class="md-primary display-block margin-bottom-16" ng-model="vm.formData.SMACorrespondence" name="SMACorrespondence">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.CORRESPONDENCE"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.CORRESPONDENCE_LOCAL"></span>
+                    </md-checkbox>
+                    <md-checkbox class="md-primary display-block margin-bottom-16" ng-model="vm.formData.SMAFollowingAddress" name="SMAFollowingAddress">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FOLLOWING_ADDRESS"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FOLLOWING_ADDRESS_LOCAL"></span>
+                    </md-checkbox>
+
+
+                    <div ng-if="vm.formData.SMAFollowingAddress === true">
+                        <div layout="row">
+                            <div flex-xs="100" flex-sm="80" flex-md="50" flex-lg="50" flex-xl="50">
+                                <md-input-container class="full-width margin-bottom-0">
+                                <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                                    <input type="text" class="font-size-fixed-16" name="SMAFollowingAddressInput" ng-model="vm.formData.SMAFollowingAddressInput"
+                                        required>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAFollowingAddressInput.$error">
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+
+                <div>
+                    <md-checkbox class="md-primary display-block margin-top-16" ng-model="vm.formData.SMAMailTo" name="SMAMailTo">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EMAIL_TO_THE"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.EMAIL_TO_THE_LOCAL"></span>
+                    </md-checkbox>
+
+
+                    <div ng-if="vm.formData.SMAMailTo === true">
+                        <div layout="row">
+                            <div flex-xs="100" flex-sm="80" flex-md="50" flex-lg="50" flex-xl="50">
+                                <md-input-container class="full-width margin-bottom-0">
+                                <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                                    <input type="email" class="font-size-fixed-16" name="SMAMailToInput" ng-model="vm.formData.SMAMailToInput"
+                                        required>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAMailToInput.$error">
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+                <div>
+                    <md-checkbox class="md-primary display-block margin-top-16" ng-model="vm.formData.SMATelephoneTo" name="SMATelephoneTo">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.TELEPHONE_ON"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.TELEPHONE_ON_LOCAL"></span>
+                    </md-checkbox>
+
+
+                    <div ng-if="vm.formData.SMATelephoneTo === true">
+                        <div layout="row">
+                            <div flex-xs="100" flex-sm="80" flex-md="50" flex-lg="50" flex-xl="50">
+                                <md-input-container class="full-width margin-bottom-0">
+                                <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                                    <input type="tel" class="font-size-fixed-16" name="SMATelephoneToInput" ng-model="vm.formData.SMATelephoneToInput"
+                                        required>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMATelephoneToInput.$error">
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+                <div>
+                    <md-checkbox class="md-primary display-block margin-bottom-0" ng-model="vm.formData.SMAFaxOn" name="SMAFaxOn">
+                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FAX_ON"></span>
+                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.FAX_ON_LOCAL"></span>
+                    </md-checkbox>
+
+
+                    <div ng-if="vm.formData.SMAFaxOn === true">
+                        <div layout="row">
+                            <div flex-xs="100" flex-sm="80" flex-md="50" flex-lg="50" flex-xl="50">
+                                <md-input-container class="full-width margin-bottom-0">
+                                    <label>
+                                        <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                        <span class="slpc-workflow-dual-language" ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        <md-tooltip md-direction="top">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.PLEASE_SPECIFY_LOCAL"></span>
+                                        </md-tooltip>
+                                    </label>
+                                    <input type="email" class="font-size-fixed-16" name="SMAFaxOnInput" ng-model="vm.formData.SMAFaxOnInput"
+                                        required>
+                                    <div ng-messages="selfManageAdvisoryStrategy.SMAFaxOnInput.$error">
+                                        <div ng-message="required">
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                            <span ng-bind="::vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.REQUIRED_MESSAGE_LOCAL" theme-background="warn" fg-only class="font-size-fixed-12"></span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+                <ul class="padding-top-20">
+                    <li class="padding-top-20" ng-repeat="(key, item ) in vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECTING_OPTION">
+                        <span> {{ vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECTING_OPTION[key] }}</span>
+                        <span class="slpc-workflow-dual-language"> {{ vm.localizationObj.NEW.SELF_MANAGE_ADVISORY_STRATEGY.SELECTING_OPTION_LOCAL[key] }}</span>
+                        
+                    </li>
+                </ul>               
+
+
+                
+
+
+
+                
+            </div>
+        </div>
+    </form>
+</div>
